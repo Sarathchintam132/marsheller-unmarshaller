@@ -29,7 +29,9 @@ public class Marshalling {
 		
 		JAXBContext jaxbContext = JAXBContext.newInstance(Student.class);
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-		unmarshaller.unmarshal(new File("student.xml"));
+		Object object = unmarshaller.unmarshal(new File("student.xml"));
+		Student stu =(Student)object;
+		System.out.println(stu);
 		System.out.println("=======================unmarshalling completed"
 				+ "==============================================");
 	}
